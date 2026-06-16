@@ -1,0 +1,30 @@
+:root {
+  --color-primary: #ed2224;
+  --color-secondary: #fff2d2;
+  --font-head: 'Georgia', 'Times New Roman', serif;
+  --font-header:
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+
+  color: #241816;
+  background: #fff;
+  font-family:
+    var(--font-header);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #fff;
+}
+
+#root {
+  min-height: 100svh;
+}
