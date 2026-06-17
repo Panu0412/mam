@@ -1,4 +1,5 @@
 .best-seller-section {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(240px, 30%) minmax(0, 70%);
   gap: 0;
@@ -6,9 +7,11 @@
   width: 100%;
   margin-top: 24px;
   padding: 0;
-  min-height: 540px;
+  height: min(640px, calc(100vh - 190px));
+  min-height: 500px;
   border-top: 1px solid rgba(17, 17, 17, 0.16);
   border-bottom: 1px solid rgba(17, 17, 17, 0.16);
+  overflow: visible;
 }
 
 .best-seller-left {
@@ -23,7 +26,7 @@
 .best-seller-title {
   margin: 0;
   color: #111;
-  font-family: var(--font-header);
+  font-family: 'VIP Makes Momen', var(--font-header);
   font-size: clamp(2.8rem, 5vw, 5.2rem);
   line-height: 0.9;
   letter-spacing: -0.06em;
@@ -31,17 +34,22 @@
 }
 
 .best-seller-right {
+  position: relative;
   min-width: 0;
   background: #f7eee2;
-  padding: 22px 28px 26px;
+  padding: 12px 28px 18px;
+  overflow: visible;
 }
 
 .carousel-frame {
+  height: 100%;
   display: grid;
-  gap: 12px;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  gap: 8px;
 }
 
 .carousel-shell {
+  height: 100%;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   gap: 16px;
@@ -51,60 +59,98 @@
 .carousel-viewport {
   overflow: hidden;
   width: 100%;
+  height: 100%;
   background: #f7eee2;
 }
 
 .carousel-track {
   display: flex;
   width: 100%;
+  height: 100%;
   transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
 }
 
 .carousel-slide {
   flex: 0 0 100%;
+  height: 100%;
 }
 
 .product-card {
-  min-height: 500px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-  align-items: start;
+  position: relative;
+  height: 100%;
+  min-height: 0;
+  display: block;
   padding: 0;
   background: #f7eee2;
 }
 
 .product-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 320px;
-  padding-top: 8px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: grid;
+  place-items: start center;
+  padding: 10px 0 120px;
+  box-sizing: border-box;
+  z-index: 2;
+  overflow: hidden;
 }
 
 .product-image {
-  width: 100%;
-  max-width: 320px;
-  height: 100%;
+  position: relative;
+  z-index: 3;
+  width: min(38%, 390px);
+  height: auto;
+  max-height: 68%;
   object-fit: contain;
   filter: drop-shadow(0 22px 32px rgba(36, 24, 22, 0.16));
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.ingredient-overlay {
+  position: absolute;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 18px 32px rgba(36, 24, 22, 0.18);
+  opacity: 0;
+  transform: var(--ingredient-transform) scale(0.72);
+  transform-origin: center;
+  transition:
+    opacity 0.36s ease,
+    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.ingredient-overlay.is-visible {
+  opacity: 1;
+  transform: var(--ingredient-transform) scale(1);
 }
 
 .product-content {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  z-index: 5;
+  transform: translateX(-50%);
   display: grid;
-  gap: 14px;
+  gap: 8px;
   align-content: center;
   justify-items: center;
   text-align: center;
   max-width: 640px;
   margin: 0 auto;
-  padding: 4px 24px 0;
+  padding: 0 24px;
+  width: min(100%, 680px);
 }
 
 .product-label {
   margin: 0;
   color: #ed2224;
+  font-family: 'Quicksand', var(--font-header);
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -114,22 +160,25 @@
 .product-name {
   margin: 0;
   color: #111;
-  font-family: var(--font-header);
-  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+  font-family: 'Quicksand', var(--font-header);
+  font-size: clamp(1.7rem, 2.2vw, 2.35rem);
   line-height: 1.1;
 }
 
 .product-price {
   margin: 0;
   color: #ed2224;
-  font-size: 1.2rem;
+  font-family: 'Quicksand', var(--font-header);
+  font-size: 1.08rem;
   font-weight: 800;
 }
 
 .product-description {
   margin: 0;
   color: #4f433d;
-  line-height: 1.75;
+  font-family: 'Quicksand', var(--font-header);
+  font-size: 0.95rem;
+  line-height: 1.45;
   max-width: 48ch;
 }
 
@@ -138,12 +187,13 @@
   align-items: center;
   justify-content: center;
   width: fit-content;
-  min-height: 46px;
-  padding: 0 18px;
+  min-height: 38px;
+  padding: 0 16px;
   border-radius: 999px;
   background: #ed2224;
   color: #fff2d2;
   text-decoration: none;
+  font-family: 'Quicksand', var(--font-header);
   font-weight: 800;
   transition:
     transform 0.22s ease,
@@ -196,7 +246,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  padding-top: 10px;
+  padding-top: 0;
 }
 
 .carousel-dot {
@@ -234,11 +284,14 @@
 @media (max-width: 1100px) {
 .best-seller-section {
     grid-template-columns: 1fr;
+    height: auto;
+    min-height: 0;
   }
 
   .best-seller-left {
     border-right: 0;
     border-bottom: 1px solid rgba(17, 17, 17, 0.16);
+    padding: 28px;
   }
 }
 
@@ -252,11 +305,16 @@
   }
 
   .product-card {
-    min-height: auto;
+    min-height: 560px;
   }
 
   .product-visual {
-    height: 280px;
+    height: clamp(320px, 78vw, 430px);
+  }
+
+  .product-image {
+    width: min(58%, 300px);
+    max-height: 66%;
   }
 
   .best-seller-section {
@@ -269,8 +327,25 @@
     padding: 18px 0;
   }
 
+  .best-seller-right {
+    padding-inline: 14px;
+  }
+
   .product-card {
     padding: 18px;
     gap: 18px;
+  }
+
+  .product-content {
+    bottom: 8px;
+    padding-inline: 12px;
+  }
+
+  .product-description {
+    display: none;
+  }
+
+  .product-image {
+    width: min(68%, 260px);
   }
 }

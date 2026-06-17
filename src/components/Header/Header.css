@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'VIP Makes Momen';
+  src: url('../../../Fonts/Fonts/1FTV-VIP-Makes-Momen.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -93,6 +100,11 @@
   height: 44px;
   perspective: 700px;
   vertical-align: middle;
+}
+
+.nav-links-left .nav-link,
+.nav-links-left .nav-button {
+  font-family: 'VIP Makes Momen', var(--font-header);
 }
 
 .login-link:hover,
@@ -285,6 +297,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
+  font-family: 'VIP Makes Momen', var(--font-header);
 }
 
 .mega-column a:hover,
