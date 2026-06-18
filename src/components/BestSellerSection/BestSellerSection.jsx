@@ -112,7 +112,7 @@ function BestSellerSection() {
   }
 
   return (
-    <section className="best-seller-section" aria-labelledby="best-seller-title">
+    <section className="best-seller-section" aria-labelledby="best-seller-title" id="product">
       <div className="best-seller-left">
         <h2 id="best-seller-title" className="best-seller-title">
           Best

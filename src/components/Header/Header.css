@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'VIP Makes Momen';
+  font-family: '1FTV-VIP-Makes-Momen';
   src: url('../../../Fonts/Fonts/1FTV-VIP-Makes-Momen.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -10,7 +10,6 @@
   top: 0;
   z-index: 50;
   background: #fff;
-  box-shadow: 0 8px 22px rgba(76, 18, 18, 0.16);
   font-family: var(--font-header);
 }
 
@@ -22,6 +21,7 @@
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.2px;
+  font-family: '1FTV-VIP-Makes-Momen', var(--font-header);
 }
 
 .top-strip-track {
@@ -104,7 +104,7 @@
 
 .nav-links-left .nav-link,
 .nav-links-left .nav-button {
-  font-family: 'VIP Makes Momen', var(--font-header);
+  font-family: '1FTV-VIP-Makes-Momen', var(--font-header);
 }
 
 .login-link:hover,
@@ -297,7 +297,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  font-family: 'VIP Makes Momen', var(--font-header);
+  font-family: '1FTV-VIP-Makes-Momen', var(--font-header);
 }
 
 .mega-column a:hover,

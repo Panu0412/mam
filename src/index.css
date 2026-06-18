@@ -10,7 +10,7 @@
     sans-serif;
 
   color: #241816;
-  background: #fff;
+  background: #fff2d2;
   font-family:
     var(--font-header);
   font-synthesis: none;
@@ -22,7 +22,7 @@
 body {
   margin: 0;
   min-width: 320px;
-  background: #fff;
+  background: #fff2d2;
 }
 
 #root {
