@@ -3,6 +3,7 @@ import HomeBanner from '../../components/HomeBanner/HomeBanner.jsx'
 import BestSellerSection from '../../components/BestSellerSection/BestSellerSection.jsx'
 import MiniCombo from '../../components/MiniCombo/MiniCombo.jsx'
 import OtherProductsCarousel from '../../components/OtherProductsCarousel/OtherProductsCarousel.jsx'
+import QuizSection from '../../components/QuizSection/QuizSection.jsx'
 import Footer from '../../components/Footer/Footer.jsx'
 import './Home.css'
 
@@ -14,6 +15,7 @@ function Home() {
       <BestSellerSection />
       <MiniCombo />
       <OtherProductsCarousel />
+      <QuizSection />
       <Footer />
     </div>
   )
