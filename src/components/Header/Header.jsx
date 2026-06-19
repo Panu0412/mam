@@ -3,7 +3,7 @@ import logo from '../../assets/Logo.svg'
 import './Header.css'
 
 const navItems = [
-  { label: 'Giới thiệu', href: '#about' },
+  { label: 'Giới thiệu', href: '/about' },
   { label: 'Sản phẩm', href: '/product' },
   { label: 'Đặc biệt', href: '#special' },
   { label: 'Tin tức', href: '#new' },

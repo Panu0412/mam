@@ -1,0 +1,23 @@
+.about-page {
+  min-height: 100svh;
+  background: #f8f5ef;
+  color: #111;
+}
+
+.about-page__main {
+  padding-top: 112px;
+}
+
+.about-page__content {
+  padding: 0 1.2rem 4rem;
+}
+
+@media (max-width: 900px) {
+  .about-page__main {
+    padding-top: 100px;
+  }
+
+  .about-page__content {
+    padding: 0 0.9rem 2.5rem;
+  }
+}
