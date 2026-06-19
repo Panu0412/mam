@@ -4,7 +4,7 @@ import bacBo from '../../assets/section-Bestseller/Bac_Bo/mam_tep.jpeg'
 import namBo from '../../assets/section-Bestseller/Nam_Bo/mam-ca-linh.jpg'
 import trungBo from '../../assets/section-Bestseller/Trung_Bo/thit-kho-mam-ruoc.jpg'
 
-const comboCards = [
+const defaultComboCards = [
   {
     id: 'combo-1',
     label: 'Combo 1',
@@ -38,23 +38,32 @@ const comboCards = [
   },
 ]
 
-const filterTabs = ['ALL', 'FRESH', 'FLOWER', 'WOOD', 'AMBER', 'DRESSING FUMES', 'GOLD LABEL', 'SUMMER EXCLUSIVES']
+const defaultFilterTabs = ['ALL', 'FRESH', 'FLOWER', 'WOOD', 'AMBER', 'DRESSING FUMES', 'GOLD LABEL', 'SUMMER EXCLUSIVES']
 
-function MiniCombo() {
+function MiniCombo({
+  eyebrow = 'Mini combo',
+  title = 'Gợi ý combo mắm theo vùng',
+  tabs = defaultFilterTabs,
+  cards = defaultComboCards,
+}) {
+  const tabsStyle = {
+    gridTemplateColumns: `repeat(${Math.max(tabs.length, 1)}, minmax(120px, 1fr))`,
+  }
+
   return (
     <section className="mini-combo" aria-labelledby="mini-combo-title" id="mini-combo">
       <div className="mini-combo__frame">
         <div className="mini-combo__topbar">
           <div className="mini-combo__section-name">
-            <p className="mini-combo__eyebrow">Mini combo</p>
+            <p className="mini-combo__eyebrow">{eyebrow}</p>
             <h2 className="mini-combo__title" id="mini-combo-title">
-              Gợi ý combo mắm theo vùng
+              {title}
             </h2>
           </div>
 
-          <div className="mini-combo__tabs" aria-label="Danh mục">
-            {filterTabs.map((tab) => (
-              <span key={tab} className={`mini-combo__tab ${tab === 'ALL' ? 'is-active' : ''}`}>
+          <div className="mini-combo__tabs" aria-label="Danh mục" style={tabsStyle}>
+            {tabs.map((tab, index) => (
+              <span key={tab} className={`mini-combo__tab ${index === 0 ? 'is-active' : ''}`}>
                 {tab}
               </span>
             ))}
@@ -62,7 +71,7 @@ function MiniCombo() {
         </div>
 
         <div className="mini-combo__grid">
-          {comboCards.map((card) => (
+          {cards.map((card) => (
             <article key={card.id} className={`mini-combo__panel ${card.cta ? 'is-choice' : ''}`}>
               <div className="mini-combo__panel-head">
                 <span className="mini-combo__panel-label">{card.label}</span>

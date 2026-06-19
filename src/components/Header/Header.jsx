@@ -4,21 +4,14 @@ import './Header.css'
 
 const navItems = [
   { label: 'Giới thiệu', href: '#about' },
-  { label: 'Sản phẩm', href: '#product', hasMegaMenu: true },
+  { label: 'Sản phẩm', href: '/product' },
   { label: 'Đặc biệt', href: '#special' },
   { label: 'Tin tức', href: '#new' },
   { label: 'Liên hệ', href: '#contact' },
 ]
 
-const productGroups = [
-  {
-    items: ['Best seller', 'Mini combo', 'Khác'],
-  },
-]
-
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isProductMenuOpen, setIsProductMenuOpen] = useState(false)
 
   return (
     <header className="site-header">
@@ -50,44 +43,10 @@ function Header() {
         >
           <ul className="nav-links nav-links-left">
             {navItems.map((item) => (
-              <li key={item.label} className={item.hasMegaMenu ? 'has-mega' : ''}>
-                {item.hasMegaMenu ? (
-                  <div
-                    className={`mega-menu-wrap ${isProductMenuOpen ? 'is-open' : ''}`}
-                    onMouseEnter={() => setIsProductMenuOpen(true)}
-                    onMouseLeave={() => setIsProductMenuOpen(false)}
-                  >
-                    <button
-                      type="button"
-                      className="nav-link nav-button"
-                      data-label={item.label}
-                      aria-expanded={isProductMenuOpen}
-                      onClick={() => setIsProductMenuOpen((open) => !open)}
-                    >
-                      {item.label}
-                    </button>
-
-                    <div className="mega-menu" role="menu" aria-label="Danh mục sản phẩm">
-                      {productGroups.map((group) => (
-                        <section key={group.items.join('-')} className="mega-column">
-                          <ul>
-                            {group.items.map((menuItem) => (
-                              <li key={menuItem}>
-                                <a href="#product" role="menuitem">
-                                  {menuItem}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </section>
-                      ))}
-                    </div>
-                  </div>
-                ) : (
-                  <a className="nav-link" href={item.href} data-label={item.label}>
-                    {item.label}
-                  </a>
-                )}
+              <li key={item.label}>
+                <a className="nav-link" href={item.href} data-label={item.label}>
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>
