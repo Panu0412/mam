@@ -5,9 +5,9 @@ import './Header.css'
 const navItems = [
   { label: 'Giới thiệu', href: '/about' },
   { label: 'Sản phẩm', href: '/product' },
-  { label: 'Đặc biệt', href: '#special' },
-  { label: 'Tin tức', href: '#new' },
-  { label: 'Liên hệ', href: '#contact' },
+  { label: 'Đặc biệt', href: '/special' },
+  { label: 'Tin tức', href: '/blog' },
+  { label: 'Liên hệ', href: '/contact' },
 ]
 
 function Header() {

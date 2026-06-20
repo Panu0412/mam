@@ -55,7 +55,7 @@ const southProducts = createProducts('Nam', [
 
 const centralProducts = createProducts('Trung', [
   { title: 'Mắm ruốc miền Trung', image: trungBoMain, description: 'Mùi thơm nồng, vị sắc nét và rất hợp nêm nếm hoặc chấm món luộc.' },
-  { title: 'Mắm ruốc hũ nhỏ', image: trungBoSecond, description: 'Dễ dùng trong bếp hàng ngày, cho món ăn dậy mùi nhanh và rõ vị.' },
+  { title: 'Mắm ruốc hũ nhỏ', image: trungBoSecond, description: 'Dễ dùng trong bếp hằng ngày, cho món ăn dậy mùi nhanh và rõ vị.' },
   { title: 'Mắm cá thu', image: trungBoThird, description: 'Đậm đà, hợp cơm nóng, rau luộc và nhiều món ăn miền biển.' },
   { title: 'Mắm còng', image: trungBoFourth, description: 'Một hương vị lạ miệng, cá tính, phù hợp người thích đặc sản vùng miền.' },
   { title: 'Mắm ruốc đặc biệt', image: trungBoMain, description: 'Phiên bản đậm hơn để nấu bún, kho thịt hoặc xào đều rất nổi bật.' },
@@ -83,7 +83,10 @@ function Product() {
         <section className="product-page__hero">
           <div className="product-page__hero-copy">
             <p className="product-page__eyebrow">Trang sản phẩm</p>
-            <h1>Bộ sưu tập sản phẩm 3 miền với 3 section riêng biệt</h1>
+            <h1>Bộ sưu tập sản phẩm 3 miền với trải nghiệm chọn vị thật gần với bếp nhà Việt</h1>
+            <p>
+              Từ vị Bắc đậm sâu, vị Trung sắc nét tới vị Nam mộc mà bắt cơm, mỗi section đều được giữ chất riêng để khách dễ tìm đúng loại mắm mình yêu thích.
+            </p>
             <a className="product-page__cta" href="#mien-bac">
               Xem sản phẩm
             </a>

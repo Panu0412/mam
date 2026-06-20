@@ -1,0 +1,123 @@
+@font-face {
+  font-family: '1FTV-VIP-Makes-Momen';
+  src: url('../../../Fonts/Fonts/1FTV-VIP-Makes-Momen.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Quicksand-Regular';
+  src: url('../../../Fonts/Fonts/Quicksand-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.not-found-page {
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at top left, rgba(237, 34, 36, 0.06), transparent 24%),
+    linear-gradient(180deg, #fffdfa 0%, #f8f0e3 100%);
+}
+
+.not-found-page__main {
+  padding: 112px 0 72px;
+}
+
+.not-found-hero,
+.not-found-body {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+.not-found-hero {
+  padding-top: 36px;
+  padding-bottom: 24px;
+}
+
+.not-found-hero__eyebrow {
+  margin: 0 0 10px;
+  color: #3c302c;
+  font-family: 'Quicksand-Regular', var(--font-header);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.not-found-hero h1 {
+  margin: 0;
+  color: #111;
+  font-family: '1FTV-VIP-Makes-Momen', var(--font-header);
+  font-size: clamp(4.8rem, 11vw, 12rem);
+  line-height: 0.9;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.not-found-body {
+  border-top: 1px solid rgba(36, 24, 22, 0.12);
+  padding-top: 28px;
+}
+
+.not-found-body__copy {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: clamp(24px, 8vw, 140px);
+}
+
+.not-found-body__copy p {
+  margin: 0;
+  color: #1c1a19;
+  font-family: 'Quicksand-Regular', var(--font-header);
+  font-size: clamp(1.2rem, 2.2vw, 2rem);
+  line-height: 1.2;
+}
+
+.not-found-body__back {
+  margin-top: 68px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #111;
+  font-family: 'Quicksand-Regular', var(--font-header);
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  cursor: pointer;
+  transition:
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.not-found-body__back:hover,
+.not-found-body__back:focus-visible {
+  color: #ed2224;
+  transform: translateX(4px);
+  outline: none;
+}
+
+@media (max-width: 900px) {
+  .not-found-page__main {
+    padding: 100px 0 44px;
+  }
+
+  .not-found-hero,
+  .not-found-body {
+    padding-inline: 14px;
+  }
+
+  .not-found-hero {
+    padding-top: 22px;
+    padding-bottom: 18px;
+  }
+
+  .not-found-body {
+    padding-top: 20px;
+  }
+
+  .not-found-body__copy {
+    max-width: none;
+    margin-right: 0;
+  }
+
+  .not-found-body__back {
+    margin-top: 34px;
+  }
+}
